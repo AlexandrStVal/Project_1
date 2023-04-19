@@ -1,14 +1,19 @@
-try:
-    money = int(input('Введите сумму вклада (руб.): '))  # 100000
-except ValueError:
-    print("Введен некорректный формат!")
-    money = int(input('Введите сумму вклада в формате цифр (руб.): '))
-per_cent = {'ТКБ': 5.6, 'СКБ': 5.9, 'ВТБ': 4.28, 'СБЕР': 4.0}
-percent_list = list(per_cent.values())
-deposit = []  # [5600, 5900, 4280, 4000]
-for i in range(0, len(percent_list)):
-    deposit.append(round(percent_list[i] * money / 100))
-max_deposit = max(deposit)
-print(f'deposit = {deposit}')
-print(f'Максимальная сумма, которую вы можете заработать — {max_deposit:.2f} руб.')
-# print('Максимальная сумма, которую вы можете заработать — %.0f' % (max_deposit), 'руб.')
+tickets = int(input('Введите количество билетов: '))  # 4
+age = [int(input('Введите возраст посетителя: ')) for i in range(tickets)]  # [18, 25, 33, 45]
+prices = 0
+print('_______')
+for item in age:
+    if item < 18:
+        print('Вход на конференцию бесплатно:', item, 'лет')
+    elif 18 <= item < 25:
+        prices += 990
+        print('Стоимость входа на конференцию 990 руб.:', item, 'лет')
+    else:
+        prices += 1390
+        print('Стоимость входа на конференцию 1390 руб.:', item, 'лет/года')
+print('________')
+if tickets > 3:
+    prices = prices - ((prices /100) * 10)
+    print(f'Общая стоимость входа на конференцию, с учетом скидки 10 %: {prices:.2f} руб.')  # 4644.00 руб.
+else:
+    print(f'Общая стоимость входа на конференцию: {prices:.2f} руб.')

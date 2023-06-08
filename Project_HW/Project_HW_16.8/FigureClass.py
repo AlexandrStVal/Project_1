@@ -5,7 +5,6 @@ class Rectangle:
 
     def getArea(self):
         return self.width * self.height
-
 class Square:
     def __init__(self, a):
         self.a = a

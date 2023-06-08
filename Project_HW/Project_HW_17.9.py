@@ -1,4 +1,4 @@
-list_of_numbers = list(set(map(int, input("Введите числа через пробел: ").split())))  # список чисел
+list_of_numbers = list(map(int, input("Введите числа через пробел: ").split()))  # список чисел
 free_num = int(input('Введите число: '))
 # функция сортирует список по возрастанию
 def list_sort(nums):

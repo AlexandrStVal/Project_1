@@ -1,4 +1,4 @@
-list_of_numbers = list(map(int, input("Введите числа через пробел: ").split()))  # список чисел
+list_of_numbers = list(set(map(int, input("Введите числа через пробел: ").split())))  # список чисел
 free_num = int(input('Введите число: '))
 # функция сортирует список по возрастанию
 def list_sort(nums):
@@ -11,7 +11,7 @@ def list_sort(nums):
         nums[item], nums[min_index] = nums[min_index], nums[item]
 # запуск функции
 list_sort(list_of_numbers)
-print(list_of_numbers)
+print(set(list_of_numbers))
 print('_______')
 
 # # Двоичный поиск требует сортировки элементов в списке

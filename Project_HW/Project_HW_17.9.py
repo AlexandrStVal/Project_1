@@ -11,7 +11,7 @@ def list_sort(nums):
         nums[item], nums[min_index] = nums[min_index], nums[item]
 # запуск функции
 list_sort(list_of_numbers)
-print(set(list_of_numbers))
+print(list_of_numbers)
 print('_______')
 
 # # Двоичный поиск требует сортировки элементов в списке
